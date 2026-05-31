@@ -1,0 +1,31 @@
+# StorageClass для S3 CSI
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: s3-csi
+provisioner: ru.yandex.s3.csi
+parameters:
+  mounter: geesefs
+  options: "--memory-limit 1000 --dir-mode 0777 --file-mode 0666"
+  bucket: test-for-demo
+  csi.storage.k8s.io/provisioner-secret-name: csi-s3-secret
+  csi.storage.k8s.io/provisioner-secret-namespace: messager-dev
+  csi.storage.k8s.io/controller-publish-secret-name: csi-s3-secret
+  csi.storage.k8s.io/controller-publish-secret-namespace: messager-dev
+  csi.storage.k8s.io/node-stage-secret-name: csi-s3-secret
+  csi.storage.k8s.io/node-stage-secret-namespace: messager-dev
+  csi.storage.k8s.io/node-publish-secret-name: csi-s3-secret
+  csi.storage.k8s.io/node-publish-secret-namespace: messager-dev
+---
+# Secret с доступом к S3 (Cloud.ru)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: csi-s3-secret
+  namespace: messager-dev
+type: Opaque
+stringData:
+  accessKeyID: 03d26726d080be01cd01a33e9d60ad4f
+  secretAccessKey: 6507a24a320d1aa5541193e75d6bd181
+  endpoint: https://s3.cloud.ru
+  region: "ru-central-1"

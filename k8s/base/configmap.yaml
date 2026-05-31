@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: messager-config
+  namespace: messager-dev
+data:
+  MSGHTTPPORT: "8082"
+  MSGUPLOADSDIR: "/app/uploads"
+  USERHTTPPORT: "8081"
+  BFFHTTPPORT: "8080"
+  POSTGRESHOST: "postgres"
+  POSTGRESPORT: "5432"
+  POSTGRESDB: "postgres"
+  USERSERVICEURL: "http://user-service:8081"
+  MSGSERVICEURL: "http://message-service:8082"
+  FRONTENDBFFINTERNALURL: "http://bff:8080"
+  FRONTENDBFFURL: ""
