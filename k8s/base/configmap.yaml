@@ -6,12 +6,24 @@ metadata:
 data:
   MSGHTTPPORT: "8082"
   MSGUPLOADSDIR: "/app/uploads"
+
   USERHTTPPORT: "8081"
+
   BFFHTTPPORT: "8080"
+  BFF_HTTP_PORT: "8080"
+
   POSTGRESHOST: "postgres"
   POSTGRESPORT: "5432"
   POSTGRESDB: "postgres"
+
   USERSERVICEURL: "http://user-service:8081"
+  USER_SERVICE_URL: "http://user-service:8081"
+
   MSGSERVICEURL: "http://message-service:8082"
+  MSG_SERVICE_URL: "http://message-service:8082"
+
   FRONTENDBFFINTERNALURL: "http://bff:8080"
+  FRONTEND_BFF_INTERNAL_URL: "http://bff:8080"
+
   FRONTENDBFFURL: ""
+  FRONTEND_BFF_URL: ""
