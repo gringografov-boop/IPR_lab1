@@ -6,13 +6,25 @@ metadata:
 data:
   00001_init.sql: |
     -- +goose up
-    CREATE TABLE IF NOT EXISTS messages (
-      id SERIAL PRIMARY KEY,
-      user_id INTEGER NOT NULL,
+    DROP TABLE IF EXISTS messages;
+
+    CREATE TABLE messages (
+      id BIGSERIAL PRIMARY KEY,
+      sender_id UUID NOT NULL,
+      receiver_id UUID NOT NULL,
       text TEXT NOT NULL,
       attachment_path TEXT,
       created_at TIMESTAMP NOT NULL DEFAULT NOW()
     );
+
+    CREATE INDEX idx_messages_sender_receiver_created_at
+      ON messages (sender_id, receiver_id, created_at DESC);
+
+    CREATE INDEX idx_messages_receiver_sender_created_at
+      ON messages (receiver_id, sender_id, created_at DESC);
+
+    CREATE INDEX idx_messages_created_at
+      ON messages (created_at DESC);
 
     -- +goose down
     DROP TABLE IF EXISTS messages;

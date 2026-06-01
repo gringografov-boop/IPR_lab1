@@ -25,7 +25,7 @@ metadata:
   namespace: messager-dev
 type: Opaque
 stringData:
-  accessKeyID: 03d26726d080be01cd01a33e9d60ad4f
-  secretAccessKey: 6507a24a320d1aa5541193e75d6bd181
+  accessKeyID: a5e9e272b6d0ed2ae6d6d2f23f1cb060
+  secretAccessKey: 04796bb8887b230d3cbab37f73a64b8d
   endpoint: https://s3.cloud.ru
   region: "ru-central-1"
