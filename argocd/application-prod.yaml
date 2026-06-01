@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: messager-dev
+  name: messager-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/gringografov-boop/IPR_lab1
     targetRevision: main
-    path: k8s/overlays/dev
+    path: k8s/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: messager-dev
+    namespace: messager-prod
   syncPolicy:
     automated:
       prune: true

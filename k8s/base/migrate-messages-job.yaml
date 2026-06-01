@@ -2,7 +2,6 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: migrate-messages
-  namespace: messager-dev
 spec:
   backoffLimit: 3
   template:

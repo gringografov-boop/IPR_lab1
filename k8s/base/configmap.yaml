@@ -2,7 +2,6 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: messager-config
-  namespace: messager-dev
 data:
   MSGHTTPPORT: "8082"
   MSGUPLOADSDIR: "/app/uploads"

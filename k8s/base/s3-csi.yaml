@@ -9,20 +9,15 @@ parameters:
   options: "--memory-limit 1000 --dir-mode 0777 --file-mode 0666"
   bucket: test-for-demo
   csi.storage.k8s.io/provisioner-secret-name: csi-s3-secret
-  csi.storage.k8s.io/provisioner-secret-namespace: messager-dev
   csi.storage.k8s.io/controller-publish-secret-name: csi-s3-secret
-  csi.storage.k8s.io/controller-publish-secret-namespace: messager-dev
   csi.storage.k8s.io/node-stage-secret-name: csi-s3-secret
-  csi.storage.k8s.io/node-stage-secret-namespace: messager-dev
   csi.storage.k8s.io/node-publish-secret-name: csi-s3-secret
-  csi.storage.k8s.io/node-publish-secret-namespace: messager-dev
 ---
 # Secret с доступом к S3 (Cloud.ru)
 apiVersion: v1
 kind: Secret
 metadata:
   name: csi-s3-secret
-  namespace: messager-dev
 type: Opaque
 stringData:
   accessKeyID: a5e9e272b6d0ed2ae6d6d2f23f1cb060
