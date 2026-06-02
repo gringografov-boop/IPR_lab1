@@ -20,7 +20,7 @@ metadata:
   name: csi-s3-secret
 type: Opaque
 stringData:
-  accessKeyID: a5e9e272b6d0ed2ae6d6d2f23f1cb060
-  secretAccessKey: 04796bb8887b230d3cbab37f73a64b8d
+  accessKeyID: admin
+  secretAccessKey: password
   endpoint: https://s3.cloud.ru
   region: "ru-central-1"
